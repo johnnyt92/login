@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Auth from '../../utils/Auth';
+import "./Nav.css";
 
 class Nav extends Component {
   
@@ -19,57 +20,27 @@ class Nav extends Component {
     // check authenticated status and toggle state based on that
     this.setState({ authenticated: Auth.isUserAuthenticated() });
   }
-
   render() {
+
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="/">Bet Social!</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      {this.state.authenticated ? (
-      <div className="collapse navbar-collapse" id="navbarText">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-          </li>
-              return(
-  <nav className="navbar navbar-inverse navbar-top">
-                <div className="container-fluid">
-                  <div className="navbar-header">
-                    <a href="/" className="navbar-brand">
-                      Bet Social!
+      <nav className="navbar navbar-inverse navbar-top ">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <a href="/" className="navbar-brand">
+              Bet Social!
         </a>
-                    <a href="/login" className="navbar-brand">
-                      Login
+            <a href="/login" className="navbar-brand">
+              Login
         </a>
-                    <a href="/register" className="navbar-brand">
-                      Register
+            <a href="/SignUp" className="navbar-brand">
+              Register
         </a>
-                    <a href="/logout" className="navbar-brand dropdown-menu-right">
-                      Logout
+            <a href="/logout" className="navbar-brand dropdown-menu-right">
+              Logout
         </a>
-                  </div>
-                </div>
-              </nav>
-        </ul>
-      </div>
-      ) : (
-      <div className="collapse navbar-collapse" id="navbarText">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <span>
-          <a className="nav-link" href="/login">Login</a>
-        </span>
-        <span>
-          <a className="nav-link" href="/signup">Sign up</a>
-        </span>
-      </div>
-      )}
-    </nav>
+          </div>
+        </div>
+      </nav>
     );
   }
 }

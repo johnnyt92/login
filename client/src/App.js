@@ -7,9 +7,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Bets from "./pages/Bets";
 import Detail from "./pages/Detail";
-import Register from "./pages/Register";
+import SignUp from "./pages/SignUp";
 import Friends from "./pages/Friends"
-import Tablist from "./components/Tablist";
+
 
 const App = () => (
   <Router>
@@ -21,7 +21,7 @@ const App = () => (
         <Route exact path="/Friends" component={Friends} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/SignUp" component={SignUp} />
         <Route component={Login} />
       </Switch>
       <Tablist />

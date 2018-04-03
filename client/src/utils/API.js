@@ -39,6 +39,6 @@ export default {
   },
   // Sign up a user
   signUp: function(userData) {
-    return axios.post("/auth/signup", userData);
+    return axios.post("/auth/SignUp", userData);
   }
 };
