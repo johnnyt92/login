@@ -4,17 +4,18 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 
+
 class Detail extends Component {
   state = {
-    book: {}
+    bet: {}
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+
   componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ book: res.data }))
+    API.getBet(this.props.match.params.id)
+      .then(res => this.setState({ bet: res.data }))
       .catch(err => console.log(err));
   }
+
 
   render() {
     return (
@@ -23,7 +24,7 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.book.title} by {this.state.book.author}
+                {this.state.bet.better} bets {this.state.bet.better_two}
               </h1>
             </Jumbotron>
           </Col>
@@ -31,16 +32,34 @@ class Detail extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Synopsis</h1>
-              <p>
-                {this.state.book.synopsis}
-              </p>
+              <h1>Wager</h1>
+              <h4>
+                {this.state.bet.wager}
+              </h4>
+            </article>
+            <article>
+              <h1>Terms</h1>
+              <h4>
+                {this.state.bet.description}
+              </h4>
+            </article>
+            <article>
+              <h1>Validator (if used)</h1>
+              <h4>
+                {this.state.bet.validator}
+              </h4>
+            </article>
+            <article>
+              <h1>Closed?</h1>
+              <h4>
+                {String(this.state.bet.closed)}
+              </h4>
             </article>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Bets</Link>
           </Col>
         </Row>
       </Container>
