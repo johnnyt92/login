@@ -129,7 +129,6 @@ class SignUp extends Component {
           </div>
           <div className="mb-3">
             <button
-              disabled={!(this.state.email && this.state.password && this.state.password.length >= 6)}
               onClick={this.handleFormSubmit}
               className="btn btn-lg btn-primary btn-block"
             >
