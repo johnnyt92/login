@@ -10,7 +10,6 @@ class SignUp extends Component {
     name: "",
     email: "",
     password: "",
-    userType: "",
     errorMessage: null
   };
 
@@ -40,7 +39,6 @@ class SignUp extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      userType: this.state.userType
     };
 
     API.signUp(userData)
